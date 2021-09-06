@@ -1,6 +1,7 @@
 package com.empresa.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,10 @@ public class AlumnoServiceImpl implements AlumnoService{
 		return repository.save(obj);
 	}
 
-	
-	
-
+	public  Optional<Alumno>buscarPorId(int idAlumno){
+		return repository.findById(idAlumno);
+	}
+	public void eliminarPorId (int idAlumno){
+		repository.deleteById(idAlumno);
+	}
 }
